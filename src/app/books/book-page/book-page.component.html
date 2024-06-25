@@ -1,0 +1,9 @@
+<ng-container *ngIf="switchPage()">
+  <book-card [book]="books" (articleId)="findBookById($event)">
+  </book-card>
+</ng-container>
+<ng-container *ngIf="!switchPage()">
+  <book-details [bookById]="bookByid" >
+
+  </book-details>
+</ng-container>
