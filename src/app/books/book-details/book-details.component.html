@@ -1,2 +1,32 @@
 
-{{bookById?.bookDescription}}
+<!---->
+<!--{{}}-->
+<!---->
+<!---->
+<!--{{}}-->
+<!--{{bookById?.bookIsbn}}-->
+<!--{{bookById?.bookRank}}-->
+<mat-grid-list cols="2" rowHeight="2:1">
+<mat-card class="example-card">
+  <mat-grid-tile rowspan="1">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{bookById?.bookTitle}}</mat-card-title>
+    <mat-card-subtitle>{{bookById?.bookAuthor}}</mat-card-subtitle>
+  </mat-card-header>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="2">
+  <img mat-card-image src="{{bookById?.bookImage}}" alt="{{bookById?.bookTitle}}">
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="1">
+  <mat-card-content>
+    <p>
+      {{bookById?.bookDescription}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button href="{{bookById?.amazonBookUrl}}">Vedd meg az Amazonról!</a>
+  </mat-card-actions>
+  </mat-grid-tile>
+</mat-card>
+</mat-grid-list>

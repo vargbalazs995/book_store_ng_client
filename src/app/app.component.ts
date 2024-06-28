@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
+import {BookService} from "./books/book.service";
+import {BooksFromApi} from "./books/book.model";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bookstore';
+
+  constructor(public bookService: BookService) {
+    this.bookService.getAllBooksRapid().subscribe((book: BooksFromApi[]) => {this.bookService.bookList = book})
+  }
+
 }

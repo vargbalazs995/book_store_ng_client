@@ -13,16 +13,18 @@ export class BookPageComponent implements OnInit{
   bookByid?: BooksFromApi;
   showAllBooks: boolean = true;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService) {
+  this.books = this.bookService.bookList
+  }
 
   ngOnInit(){
-    this.allBooksRapid()
+    // this.allBooksRapid()
   }
 
-  allBooksRapid(){
-    this.bookService.getAllBooksRapid().subscribe((book: BooksFromApi[]) => this.books=book)
-    this.showAllBooks = true;
-  }
+  // allBooksRapid(){
+  //   this.bookService.getAllBooksRapid().subscribe((book: BooksFromApi[]) => this.books=book)
+  //   this.showAllBooks = true;
+  // }
 
   findBookById(id: string){
      this.bookService.getBookById(id).subscribe((book: BooksFromApi )=> {

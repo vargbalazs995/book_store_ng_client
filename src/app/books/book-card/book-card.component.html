@@ -10,9 +10,9 @@
     {{item.bookDescription}}
     </p>
   </mat-card-content>
-  <img class="bookImage" mat-card-sm-image src="{{item.bookImage}}">
+  <img class="bookImage" mat-card-sm-image src="{{item.bookImage}}" >
   <mat-card-actions>
-    <button mat-button (click)="submitArticleId(item.bookIsbn)">Bővebben</button>
+    <a mat-button (click)="submitArticleId(item.bookIsbn)">Bővebben</a>
   </mat-card-actions>
 </mat-card>
 

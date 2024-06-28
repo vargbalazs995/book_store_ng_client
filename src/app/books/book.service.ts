@@ -6,8 +6,12 @@ import {BooksFromApi} from "./book.model";
   providedIn: 'root'
 })
 export class BookService {
-
+  header = new HttpHeaders({
+    'x-rapidapi-key' : '944c85c9e2msh256c30f82e98725p1e50b9jsn4e98d9ec1d67',
+    'x-rapidapi-host' : 'all-books-api.p.rapidapi.com'
+  })
   API_URL_Rapid: string = 'https://all-books-api.p.rapidapi.com/'
+  public bookList: BooksFromApi[] = []
 
   constructor(private http: HttpClient) { }
 
