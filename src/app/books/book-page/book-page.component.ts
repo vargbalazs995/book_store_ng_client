@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from "../book.service";
 import {BooksFromApi} from "../book.model";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -13,12 +14,11 @@ export class BookPageComponent implements OnInit{
   bookByid?: BooksFromApi;
   showAllBooks: boolean = true;
 
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService, private router: Router) {
   this.books = this.bookService.bookList
   }
 
   ngOnInit(){
-    // this.allBooksRapid()
   }
 
   // allBooksRapid(){
@@ -30,6 +30,7 @@ export class BookPageComponent implements OnInit{
      this.bookService.getBookById(id).subscribe((book: BooksFromApi )=> {
        this.bookByid = book;
      })
+    this.router.navigate(['/books/'+id]);
     this.showAllBooks = false;
   }
 
